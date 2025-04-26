@@ -1,0 +1,2 @@
+# whatsappmcp
+mcp for whatsapp
