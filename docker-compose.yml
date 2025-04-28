@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  whatsapp-mcp-server:
+    build: .
+    container_name: whatsapp-mcp-server
+    volumes:
+      - ./whatsapp-bridge:/app/whatsapp-bridge
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    environment:
+      - WHATSAPP_API_BASE_URL=http://whatsapp-bridge:8080/api
+    networks:
+      - whatsapp-network
+
+  whatsapp-bridge:
+    image: your-whatsapp-bridge-image  # You would need to create or specify this
+    container_name: whatsapp-bridge
+    volumes:
+      - ./whatsapp-bridge:/app/data
+    ports:
+      - "8080"  # Only exposed internally to the network
+    restart: unless-stopped
+    networks:
+      - whatsapp-network
+
+networks:
+  whatsapp-network:
+    driver: bridge
