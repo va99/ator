@@ -27,7 +27,7 @@ Here's an example of what you can do when it's connected to Claude.
 1. **Clone this repository**
 
    ```bash
-   git clone https://github.com/va99/ator.git
+   git clone https://github.com/va99/Napier-mcp.git
    cd whatsapp-mcp-server
    ```
 
@@ -55,7 +55,7 @@ Here's an example of what you can do when it's connected to Claude.
          "command": "{{PATH_TO_UV}}", // Run `which uv` and place the output here
          "args": [
            "--directory",
-           "{{PATH_TO_SRC}}/ator/whatsapp-mcp-server", // cd into the repo, run `pwd` and enter the output here + "/whatsapp-mcp-server"
+           "{{PATH_TO_SRC}}/Napier-mcp/whatsapp-mcp-server", // cd into the repo, run `pwd` and enter the output here + "/whatsapp-mcp-server"
            "run",
            "main.py"
          ]
